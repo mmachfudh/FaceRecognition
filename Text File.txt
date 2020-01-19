@@ -1,0 +1,2 @@
+install opencv-python==3.4.2.17
+install numpy

@@ -7,6 +7,7 @@ import numpy as np
 
 #Given an image below function returns rectangle for face detected alongwith gray scale image
 def faceDetection(test_img):
+	# img = np.full((100,80,3), 12)
     gray_img=cv2.cvtColor(test_img,cv2.COLOR_BGR2GRAY)#convert color image to grayscale
     face_haar_cascade=cv2.CascadeClassifier('HaarCascade/haarcascade_frontalface_default.xml')#Load haar classifier
     faces=face_haar_cascade.detectMultiScale(gray_img,scaleFactor=1.32,minNeighbors=5)#detectMultiScale returns rectangles
@@ -29,6 +30,8 @@ def labels_for_training_data(directory):
             print("img_path:",img_path)
             print("id:",id)
             test_img=cv2.imread(img_path)#loading each image one by one
+            # test_img = np.array(test_img, dtype=np.uint8)
+            # print(test_img.dtype)
             if test_img is None:
                 print("Image not loaded properly")
                 continue
