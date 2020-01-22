@@ -25,7 +25,7 @@ def labels_for_training_data(directory):
                 print("Skipping system file")#Skipping files that startwith .
                 continue
 
-            id=os.path.basename(path)#fetching subdirectory names
+            id=os.path.basename(path)#fetching subdirectory namesq
             img_path=os.path.join(path,filename)#fetching image path
             print("img_path:",img_path)
             print("id:",id)
@@ -54,11 +54,11 @@ def train_classifier(faces,faceID):
 #Below function draws bounding boxes around detected face in image
 def draw_rect(test_img,face):
     (x,y,w,h)=face
-    cv2.rectangle(test_img,(x,y),(x+w,y+h),(255,0,0),thickness=5)
+    cv2.rectangle(test_img,(x,y),(x+w,y+h),(255,0,0),thickness=2)
 
 #Below function writes name of person for detected label
 def put_text(test_img,text,x,y):
-    cv2.putText(test_img,text,(x,y),cv2.FONT_HERSHEY_DUPLEX,2,(255,0,0),4)
+    cv2.putText(test_img,text,(x,y),cv2.FONT_HERSHEY_DUPLEX,1,(255,255,0),4)
 
 
 

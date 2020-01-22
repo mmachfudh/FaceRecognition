@@ -6,7 +6,7 @@ import faceRecognition as fr
 
 #This module takes images  stored in diskand performs face recognition
 path=os.getcwd()
-test_img=cv2.imread(os.path.join(path,'TestImages/Kangana.jpg'))#test_img path
+test_img=cv2.imread(os.path.join(path,'TestImages/machfudh.jpg'))#test_img path
 print(path)
 faces_detected,gray_img=fr.faceDetection(test_img)
 print("faces_detected:",faces_detected)
@@ -22,7 +22,7 @@ face_recognizer.write('trainingData.yml')
 # face_recognizer=cv2.face.LBPHFaceRecognizer_create()
 # face_recognizer.read('trainingData.yml')#use this to load training data for subsequent runs
 
-name={0:"Priyanka",1:"Kangana"}#creating dictionary containing names for each label
+name={0:"Machfudh"}#creating dictionary containing names for each label
 
 for face in faces_detected:
     (x,y,w,h)=face
@@ -38,9 +38,9 @@ for face in faces_detected:
 
 resized_img=cv2.resize(test_img,(1000,1000))
 cv2.imshow("face dtecetion tutorial",resized_img)
-cv2.waitKey(0)#Waits indefinitely until a key is pressed
-cv2.destroyAllWindows
-
+cv2.waitKey(0) #Waits indefinitely until a key is pressed
+cv2.destroyAllWindows()
+# cv2.waitKey(1)
 
 
 
